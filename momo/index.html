@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="같은 공연, 필요한 순간만 함께. 공연 전후의 메이트와 나에게 맞는 귀가 방법을 찾는 MOMO 프로토타입.">
+  <title>MOMO — 순간과 순간을 모아</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
+  <!-- kit:start kit v2 | system: SOPT Planning UI v1 -->
+<style>
+/* kit v2 | system: SOPT Planning UI v1 | updated: 2026-10-16 */
+/*
+  Independent HTML/CSS teaching kit informed by the published TDS Mobile guide.
+  This is not the official TDS React package or an official Toss design system.
+  Observed palette values stay in --palette-*; --color-* expresses this kit's use.
+  System fonts only. No remote font, icon, logo, source code or runtime dependency.
+*/
+:root {
+  /* Reference palette */
+  --palette-grey-50: #f9fafb;
+  --palette-grey-100: #f2f4f6;
+  --palette-grey-200: #e5e8eb;
+  --palette-grey-300: #d1d6db;
+  --palette-grey-400: #b0b8c1;
+  --palette-grey-500: #8b95a1;
+  --palette-grey-600: #6b7684;
+  --palette-grey-700: #4e5968;
+  --palette-grey-800: #333d4b;
+  --palette-grey-900: #191f28;
+  --palette-blue-50: #e8f3ff;
+  --palette-blue-500: #3182f6;
+  --palette-blue-600: #2272eb;
+  --palette-blue-700: #1b64da;
+  --palette-red-50: #ffeeee;
+  --palette-red-600: #e42939;
+  --palette-red-700: #d22030;
+  --palette-green-50: #f0faf6;
+  --palette-green-800: #028450;
+  --palette-yellow-50: #fff9e7;
+
+  /* Semantic colors. Success and warning text are independent contrast choices. */
+  --color-bg: var(--palette-grey-50);
+  --color-surface: #ffffff;
+  --color-surface-secondary: var(--palette-grey-100);
+  --color-border: var(--palette-grey-200);
+  --color-input-border: var(--palette-grey-500);
+  --color-text: var(--palette-grey-900);
+  --color-text-muted: var(--palette-grey-700);
+  --color-primary: var(--palette-blue-700);
+  --color-primary-hover: #1558c2;
+  --color-primary-text: #ffffff;
+  --color-primary-weak: var(--palette-blue-50);
+  --color-danger: var(--palette-red-700);
+  --color-danger-weak: var(--palette-red-50);
+  --color-warning: #8a5500;
+  --color-warning-weak: var(--palette-yellow-50);
+  --color-success: #027648;
+  --color-success-weak: var(--palette-green-50);
+  --color-info: var(--palette-blue-700);
+  --color-info-weak: var(--palette-blue-50);
+  --color-disabled: var(--palette-grey-100);
+  --color-disabled-text: var(--palette-grey-500);
+  --color-backdrop: rgba(25, 31, 40, 0.48);
+  --color-code-bg: var(--palette-grey-100);
+
+  /* Planning annotations, separate from product controls. */
+  --color-pin: var(--palette-yellow-50);
+  --color-pin-border: #8a5500;
+  --color-tag-bg: var(--palette-blue-50);
+  --color-tag-text: var(--palette-blue-700);
+  --color-tag-undecided-bg: var(--palette-red-50);
+  --color-tag-undecided-text: var(--palette-red-700);
+
+  /* Rem equivalents of the observed 30, 26, 22, 20, 17, 15 and 13px scale. */
+  --font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.625rem;
+  --font-size-3xl: 1.875rem;
+  --line-height-xs: 1.21875rem;
+  --line-height-sm: 1.40625rem;
+  --line-height-md: 1.59375rem;
+  --line-height-lg: 1.8125rem;
+  --line-height-xl: 1.9375rem;
+  --line-height-2xl: 2.1875rem;
+  --line-height-3xl: 2.5rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+  --line-height: 1.5;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 0.125rem 0.75rem rgba(25, 31, 40, 0.04);
+  --shadow-dialog: 0 1.5rem 4rem rgba(25, 31, 40, 0.16);
+
+  /* Default controls meet a 48px target at the normal root font size. */
+  --control-height: 3rem;
+  --button-height-small: 2rem;
+  --button-height-medium: 2.375rem;
+  --button-height-large: 3rem;
+  --button-height-xlarge: 3.5rem;
+  --button-radius-small: 0.5rem;
+  --button-radius-medium: 0.625rem;
+  --button-radius-large: 0.875rem;
+  --button-radius-xlarge: 1rem;
+  --panel-width: 22rem;
+  --content-width: 78rem;
+  --dialog-width: 28rem;
+}
+
+/* SOPT Planning UI v1. Original CSS using the public reference's visual principles. */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { color-scheme: light; }
+body { margin: 0; font-family: var(--font-family); font-size: var(--font-size-md); line-height: var(--line-height); color: var(--color-text); background: var(--color-bg); overflow-wrap: anywhere; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button { touch-action: manipulation; }
+a { color: var(--color-primary); text-underline-offset: var(--space-1); }
+:focus-visible { outline: 0.1875rem solid var(--color-info); outline-offset: var(--space-1); }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-weight: var(--font-weight-bold); letter-spacing: -0.025em; }
+h1 { font-size: var(--font-size-3xl); line-height: var(--line-height-3xl); }
+h2 { font-size: var(--font-size-xl); line-height: var(--line-height-xl); margin-bottom: var(--space-4); }
+h3 { font-size: var(--font-size-md); line-height: var(--line-height-md); margin-bottom: var(--space-2); }
+p { margin-bottom: var(--space-4); }
+
+/* Existing service layout contract. */
+.k-header { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); align-items: center; padding: var(--space-5) var(--space-6); background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.k-header h1 { margin: 0; font-size: var(--font-size-xl); line-height: var(--line-height-xl); }
+.k-meta { font-size: var(--font-size-xs); line-height: var(--line-height-xs); color: var(--color-text-muted); }
+.k-main { display: grid; grid-template-columns: minmax(0, 1fr) var(--panel-width); gap: var(--space-5); width: min(100%, var(--content-width)); margin: 0 auto; padding: var(--space-6); align-items: start; }
+.k-screen { position: relative; min-width: 0; min-height: 26.25rem; padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.k-screen.k-screen-plain { padding-left: var(--space-6); }
+.k-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-4); }
+.k-stack { display: grid; gap: var(--space-4); }
+.k-inline { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
+
+/* Label, help and error remain explicit. aria-invalid works with existing JavaScript. */
+.k-field { position: relative; margin: var(--space-5) 0; }
+.k-field label { display: block; margin-bottom: var(--space-2); color: var(--color-text); font-size: var(--font-size-sm); line-height: var(--line-height-sm); font-weight: var(--font-weight-bold); }
+.k-input, .k-select, .k-textarea { display: block; width: 100%; min-width: 0; min-height: var(--control-height); padding: var(--space-3) var(--space-4); border: 1px solid var(--color-input-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); font-size: var(--font-size-md); line-height: var(--line-height-md); }
+.k-textarea { min-height: 7rem; resize: vertical; }
+.k-input::placeholder, .k-textarea::placeholder { color: var(--color-text-muted); opacity: 1; }
+.k-input:disabled, .k-select:disabled, .k-textarea:disabled { background: var(--color-disabled); border-color: var(--color-border); color: var(--color-disabled-text); cursor: not-allowed; }
+.k-input[readonly] { background: var(--color-surface-secondary); }
+.k-input.is-error, .k-select.is-error, .k-textarea.is-error, .k-input[aria-invalid="true"], .k-select[aria-invalid="true"], .k-textarea[aria-invalid="true"] { border-color: var(--color-danger); }
+.k-help { margin: var(--space-2) 0 0; color: var(--color-text-muted); font-size: var(--font-size-xs); line-height: var(--line-height-xs); }
+.k-help.is-error { color: var(--color-danger); }
+
+/* Fill, weak, outline, destructive and disabled states. Default is large. */
+.k-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--button-height-large); max-width: 100%; padding: 0.625rem var(--space-5); border: 1px solid transparent; border-radius: var(--button-radius-large); background: var(--color-primary); color: var(--color-primary-text); font-size: var(--font-size-md); line-height: var(--line-height-md); font-weight: var(--font-weight-bold); text-align: center; text-decoration: none; cursor: pointer; }
+.k-btn:hover:not(:disabled):not([aria-disabled="true"]) { background: var(--color-primary-hover); }
+.k-btn.k-weak, .k-btn.k-ghost { background: var(--color-primary-weak); color: var(--color-primary); }
+.k-btn.k-weak:hover:not(:disabled), .k-btn.k-ghost:hover:not(:disabled) { background: #d8eaff; color: var(--color-primary-hover); }
+.k-btn.k-outline { background: var(--color-surface); color: var(--color-text); border-color: var(--color-input-border); }
+.k-btn.k-outline:hover:not(:disabled) { background: var(--color-surface-secondary); }
+.k-btn.k-danger { background: var(--color-danger); color: var(--color-primary-text); }
+.k-btn.k-danger:hover:not(:disabled) { background: #b61928; }
+.k-btn.k-small { min-height: var(--button-height-small); padding: 0.25rem var(--space-3); border-radius: var(--button-radius-small); font-size: var(--font-size-xs); line-height: var(--line-height-xs); }
+.k-btn.k-medium { min-height: var(--button-height-medium); padding: 0.375rem var(--space-4); border-radius: var(--button-radius-medium); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-btn.k-xlarge { min-height: var(--button-height-xlarge); padding: var(--space-3) var(--space-5); border-radius: var(--button-radius-xlarge); }
+.k-btn:disabled, .k-btn[aria-disabled="true"] { background: var(--color-disabled); border-color: transparent; color: var(--color-disabled-text); cursor: not-allowed; }
+.k-btn[aria-busy="true"] { cursor: progress; }
+.k-btn.k-full { width: 100%; }
+.k-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+
+/* Selection controls keep native checkbox behavior and a generous label target. */
+.k-options { margin: var(--space-4) 0; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-input-border); border-radius: var(--radius-md); }
+.k-options legend { padding: 0 var(--space-2); font-weight: var(--font-weight-bold); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-options label, .k-check { display: flex; align-items: center; gap: var(--space-3); min-height: var(--control-height); margin: 0; padding: var(--space-2) 0; cursor: pointer; }
+.k-options input, .k-check input { flex: 0 0 auto; width: 1.25rem; height: 1.25rem; margin: 0; accent-color: var(--color-primary); }
+.k-switch-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: var(--space-9); }
+.k-switch { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-width: 3.75rem; min-height: var(--control-height); padding: var(--space-2) var(--space-1); border: 0; border-radius: var(--radius-md); background: transparent; cursor: pointer; }
+.k-switch-track { position: relative; display: block; width: 3.25rem; height: 2rem; border-radius: var(--radius-pill); background: var(--palette-grey-600); }
+.k-switch-track::after { content: ""; position: absolute; top: var(--space-1); left: var(--space-1); width: 1.5rem; height: 1.5rem; border-radius: var(--radius-pill); background: var(--color-surface); }
+.k-switch[aria-checked="true"] .k-switch-track { background: var(--color-primary); }
+.k-switch[aria-checked="true"] .k-switch-track::after { left: 1.5rem; }
+.k-switch:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Lists, summary and tabular information. */
+.k-list { margin: 0; padding: 0; list-style: none; }
+.k-list-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); width: 100%; min-height: var(--space-9); padding: var(--space-4) 0; border: 0; border-bottom: 1px solid var(--color-border); background: transparent; color: var(--color-text); text-align: left; font: inherit; }
+.k-list-row:last-child { border-bottom: 0; }
+button.k-list-row, a.k-list-row { cursor: pointer; text-decoration: none; }
+.k-list-title { display: block; font-weight: var(--font-weight-bold); }
+.k-list-description { display: block; margin-top: var(--space-1); color: var(--color-text-muted); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-summary { margin: var(--space-5) 0; }
+.k-summary dt { margin-top: var(--space-4); color: var(--color-text-muted); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-summary dd { margin: var(--space-1) 0 0; font-weight: var(--font-weight-bold); }
+.k-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-table th, .k-table td { padding: var(--space-3); border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; }
+.k-table th { background: var(--color-surface-secondary); color: var(--color-text-muted); font-weight: var(--font-weight-bold); }
+.k-table .k-num { text-align: right; }
+.k-table-scroll { max-width: 100%; overflow-x: auto; }
+
+/* Status feedback never depends on color alone. */
+.k-badge { display: inline-flex; align-items: center; padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); background: var(--color-surface-secondary); color: var(--palette-grey-700); font-size: var(--font-size-xs); line-height: var(--line-height-xs); font-weight: var(--font-weight-bold); white-space: nowrap; }
+.k-badge.is-success { background: var(--color-success-weak); color: var(--color-success); }
+.k-badge.is-warning { background: var(--color-warning-weak); color: var(--color-warning); }
+.k-badge.is-danger { background: var(--color-danger-weak); color: var(--color-danger); }
+.k-badge.is-info { background: var(--color-info-weak); color: var(--color-info); }
+.k-notice { position: relative; margin: var(--space-5) 0; padding: var(--space-4); border: 1px solid transparent; border-radius: var(--radius-md); background: var(--color-surface-secondary); color: var(--palette-grey-700); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-notice p:last-child, .k-notice h3:last-child { margin-bottom: 0; }
+.k-notice.is-warning { background: var(--color-warning-weak); color: var(--color-warning); }
+.k-notice.is-error { background: var(--color-danger-weak); color: var(--color-danger); }
+.k-notice.is-success { background: var(--color-success-weak); color: var(--color-success); }
+.k-notice.is-info { background: var(--color-info-weak); color: var(--color-info); }
+.k-status { min-height: var(--space-5); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.k-empty { padding: var(--space-8) var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-secondary); color: var(--color-text-muted); text-align: center; }
+.k-empty strong { display: block; margin-bottom: var(--space-2); color: var(--color-text); font-size: var(--font-size-lg); }
+.k-result { padding: var(--space-7) var(--space-5); text-align: center; }
+.k-result-mark { display: inline-flex; align-items: center; justify-content: center; width: var(--space-8); height: var(--space-8); margin-bottom: var(--space-4); border-radius: var(--radius-pill); background: var(--color-success-weak); color: var(--color-success); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); }
+.k-result p { color: var(--color-text-muted); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+
+.k-card { min-width: 0; padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.k-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.k-card .k-kpi { margin-top: var(--space-2); font-size: var(--font-size-2xl); line-height: var(--line-height-2xl); font-weight: var(--font-weight-bold); }
+.k-tabs { display: flex; gap: var(--space-5); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-5); overflow-x: auto; }
+.k-tab { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: var(--control-height); padding: var(--space-3) 0; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--color-text-muted); font: inherit; cursor: pointer; }
+.k-tab.is-active, .k-tab[aria-selected="true"] { border-bottom-color: var(--color-primary); color: var(--color-primary); font-weight: var(--font-weight-bold); }
+
+/* Native dialog provides modal focus containment and Escape handling. */
+.k-dialog { width: min(calc(100% - var(--space-6)), var(--dialog-width)); max-height: calc(100dvh - var(--space-6)); margin: auto; padding: 0; overflow: auto; border: 0; border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); box-shadow: var(--shadow-dialog); }
+.k-dialog::backdrop { background: var(--color-backdrop); }
+.k-dialog-head { padding: var(--space-5) var(--space-5) 0; }
+.k-dialog-head h2 { margin: 0; }
+.k-dialog-body { padding: var(--space-4) var(--space-5); }
+.k-dialog-body p:last-child { margin-bottom: 0; }
+.k-dialog-foot { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--space-3); padding: var(--space-4) var(--space-5) var(--space-5); }
+.k-bottom-sheet { width: min(100%, 40rem); max-height: 85dvh; margin: auto auto 0; border-radius: var(--space-5) var(--space-5) 0 0; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.k-sheet-handle { width: var(--space-7); height: var(--space-1); margin: var(--space-3) auto 0; border-radius: var(--radius-pill); background: var(--palette-grey-300); }
+.k-toast { position: fixed; z-index: 100; left: 50%; bottom: max(var(--space-5), env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: var(--space-4); width: max-content; max-width: calc(100% - var(--space-6)); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-text); color: var(--color-surface); box-shadow: var(--shadow-dialog); font-size: var(--font-size-sm); line-height: var(--line-height-sm); transform: translateX(-50%); }
+.k-toast-close { display: inline-flex; align-items: center; justify-content: center; min-width: var(--control-height); min-height: var(--control-height); margin: calc(var(--space-2) * -1) 0; padding: var(--space-2); border: 1px solid var(--palette-grey-500); border-radius: var(--radius-sm); background: transparent; color: var(--color-surface); font-size: var(--font-size-sm); cursor: pointer; }
+.k-bottom-cta { position: sticky; bottom: 0; padding: var(--space-4) var(--space-5) max(var(--space-4), env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--color-border); background: var(--color-surface); }
+.k-bottom-cta .k-btn { width: 100%; }
+/* Existing static modal examples remain compatible. */
+.k-modal { max-width: var(--dialog-width); margin: var(--space-4) auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.k-modal .k-modal-head { padding: var(--space-5) var(--space-5) 0; font-weight: var(--font-weight-bold); }
+.k-modal .k-modal-body { padding: var(--space-4) var(--space-5); }
+.k-modal .k-modal-foot { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--space-3); padding: var(--space-4) var(--space-5) var(--space-5); }
+
+/* Planning explanation remains visibly separate and readable at narrow widths. */
+.pin { position: absolute; left: calc(var(--space-6) * -1); top: 0; display: inline-flex; align-items: center; justify-content: center; width: var(--space-5); height: var(--space-5); border: 1px solid var(--color-pin-border); border-radius: var(--radius-pill); background: var(--color-pin); color: var(--color-warning); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); }
+.panel { min-width: 0; align-self: start; padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+.panel h2 { margin: 0 0 var(--space-4); font-size: var(--font-size-md); line-height: var(--line-height-md); }
+.panel .item { padding: var(--space-4) 0; border-top: 1px solid var(--color-border); }
+.panel .item:last-child { padding-bottom: 0; }
+.panel .item p { margin: var(--space-2) 0; }
+.panel .no { display: inline-flex; align-items: center; justify-content: center; width: var(--space-5); height: var(--space-5); margin-right: var(--space-2); border: 1px solid var(--color-pin-border); border-radius: var(--radius-pill); background: var(--color-pin); color: var(--color-warning); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); }
+.panel .tag { display: inline-block; margin-left: var(--space-2); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); background: var(--color-tag-bg); color: var(--color-tag-text); font-size: var(--font-size-xs); line-height: var(--line-height-xs); }
+.panel .tag.undecided { background: var(--color-tag-undecided-bg); color: var(--color-tag-undecided-text); }
+.panel .ref { margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--font-size-xs); line-height: var(--line-height-xs); }
+
+@media (max-width: 52rem) {
+  .k-main { grid-template-columns: minmax(0, 1fr); padding: var(--space-4); }
+  .k-header { padding: var(--space-5); }
+  .k-screen, .k-screen.k-screen-plain { min-height: 0; padding: var(--space-5); }
+  .k-screen:has(.pin) { padding-left: var(--space-8); }
+  .k-row, .k-cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 24rem) {
+  .k-header { padding: var(--space-4); }
+  .k-screen, .k-screen.k-screen-plain { padding: var(--space-4); }
+  .k-actions > .k-btn { flex: 1 1 auto; }
+  .k-dialog-foot > .k-btn { flex: 1 1 auto; }
+}
+</style>
+<!-- kit:end -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand" aria-label="MOMO 홈"><img src="./assets/mark.svg" width="29" height="29" alt=""><span>MOMO<span class="brand-dot">.</span></span></a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a href="#home" data-page="home">둘러보기</a><a href="#mates" data-page="mates">메이트 찾기</a><a href="#journey" data-page="journey">귀가 플랜</a>
+      </nav>
+      <div class="header-actions"><a class="header-join" href="#join" data-action="signup" data-entry="header">참여하기 <i data-icon="arrow-up-right"></i></a><a href="#saved" class="saved-link" data-page="saved"><i data-icon="bookmark"></i><span>보관함</span><b id="saved-count" hidden>0</b></a><button class="profile-button" id="profile-button" aria-label="내 체험 프로필">나</button></div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="page-home" class="page">
+      <div class="intro-line"><span><img src="./assets/mark.svg" width="19" height="19" alt=""> 공연의 앞뒤를 함께</span><span class="preview-label">MOMO EARLY ACCESS</span></div>
+      <section class="event-hero" aria-label="선택한 공연">
+        <div class="hero-art"><div class="hero-overlay"></div><div class="hero-copy"><p class="overline">GOOD COMPANY. GOOD WAY HOME.</p><h1>같은 공연,<br>필요한 순간만 <span>함께.</span></h1><p class="hero-sub">밥 한 끼부터 집으로 가는 길까지.<br>Moment와 moment를 모으고 모아, MOMO.</p><a class="hero-cta" href="#join" data-action="signup" data-entry="hero">MOMO 먼저 만나보기 <i data-icon="arrow-up-right"></i></a></div><div class="hero-caption"><span>MOMENT + MOMENT<br>COLLECTED TOGETHER</span><span class="hero-coordinate">37.5469° N<br>126.6660° E</span></div></div>
+        <div class="event-ticket"><div class="ticket-top"><span class="overline">MY NEXT LIVE</span><button class="text-button" id="change-event">공연 변경 <i data-icon="chevron-down"></i></button></div><div class="ticket-main"><span class="ticket-label">CONCERT</span><h2 id="hero-event-title"></h2><p id="hero-event-venue"></p><div class="ticket-date"><strong id="hero-event-day"></strong><div id="hero-event-date"></div></div></div><div class="ticket-divider"><span></span></div><div class="ticket-bottom"><div><span>이 공연에서 만나는 우리</span><b id="hero-mate-count"></b></div><div class="mini-avatars" aria-hidden="true"><span>유</span><span>소</span><span>모</span></div></div><p class="ticket-demo">공연 일정·인원은 체험용 예시입니다.</p></div>
+      </section>
+      <div class="home-shortcuts"><a href="#mates"><span class="shortcut-icon"><i data-icon="users"></i></span><div><b>잠깐 함께해도 좋아요</b><span>밥 · MD · 사진 · 함께 귀가</span></div><i data-icon="arrow-right"></i></a><a href="#journey"><span class="shortcut-icon"><i data-icon="route"></i></span><div><b>끝나고, 어떻게 가세요?</b><span>귀가 방법 비교하고 같은 방향 찾기</span></div><i data-icon="arrow-right"></i></a></div>
+      <section class="section-block"><div class="section-heading"><div><p class="section-kicker">FIND YOUR MOMENT</p><h2>이 순간, 같이 할까요?</h2></div><a href="#mates" class="text-link">모든 메이트 보기 <i data-icon="arrow-up-right"></i></a></div><div class="purpose-tabs" id="home-purposes" aria-label="동행 목적"></div><div class="ride-filters" id="home-ride-filters" hidden aria-label="귀가 방식"></div><div class="mate-grid home-mates" id="home-mates"></div></section>
+      <section class="home-journey"><div class="home-journey-copy"><p class="section-kicker">THE WAY BACK</p><h2>앵콜이 끝나도<br>집에 가는 길은 남으니까.</h2><p>셔틀부터 택시까지 한눈에 비교하고,<br>카풀·택시팟·귀가 동행도 함께 찾아보세요.</p></div><div class="home-journey-form"><label for="home-destination">어느 동네로 돌아가세요?</label><div class="destination-input"><i data-icon="map-pin"></i><select class="k-select" id="home-destination" aria-label="귀가 지역"></select></div><button id="home-plan" class="button primary">내 귀가 플랜 보기 <i data-icon="arrow-right"></i></button><div class="popular"><span>많이 찾는 방향</span><button data-home-destination="gangnam">강남</button><button data-home-destination="hongdae">홍대</button><button data-home-destination="suwon">수원</button></div></div></section>
+      <section class="signup-section" id="join" aria-labelledby="signup-title">
+        <div class="signup-story"><p class="section-kicker">MOMENT + MOMENT = MOMO</p><h2 id="signup-title">너의 moment가<br>우리의 <span>MOMO</span>가 되도록.</h2><p>혼자 가는 공연도, 함께하고 싶은 순간은 있으니까.<br>필요한 순간의 동행을 찾는 MOMO를 함께 검증해요.</p><div class="momo-stamp" aria-hidden="true"><span>MO</span><span>MO</span><small>모으고<br>모아.</small></div><div class="signup-promise"><i data-icon="users"></i><span>밥 한 끼 · 사진 한 장 · 집으로 가는 길<br>함께하고 싶은 순간을 남겨주세요.</span></div></div>
+        <form id="signup-form" class="signup-form">
+          <p class="signup-eyebrow">MOMO 검증 참여 신청</p><p id="signup-context" class="signup-context">Moment와 moment를 모으고 모아, MOMO.</p>
+          <fieldset id="signup-fields"><legend class="visually-hidden">참여 신청 정보</legend>
+            <div class="signup-field"><label for="signup-email">이메일</label><input class="k-input" id="signup-email" name="email" type="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="자주 확인하는 이메일을 남겨주세요" required></div>
+            <div class="signup-row"><div class="signup-field"><label for="signup-age">나이대</label><select class="k-select" id="signup-age" name="age" required><option value="" disabled selected>선택해주세요</option><option value="10">10대</option><option value="20">20대</option><option value="30">30대</option><option value="40+">40대 이상</option></select></div><div class="signup-field"><label for="signup-gender">성별</label><select class="k-select" id="signup-gender" name="gender" required><option value="" disabled selected>선택해주세요</option><option value="female">여성</option><option value="male">남성</option><option value="undisclosed">응답하지 않음</option></select></div></div>
+            <div class="signup-honeypot" aria-hidden="true"><label for="signup-website">이 항목은 비워주세요</label><input id="signup-website" name="website" autocomplete="off" tabindex="-1"></div>
+            <label class="signup-consent"><input name="consent" type="checkbox" required><span>MOMO 검증 참여 접수와 안내를 위한 이메일·나이대·성별 및 관심 항목 수집에 동의해요.</span></label>
+            <button class="button primary full" id="signup-submit" type="submit">MOMO 검증에 참여할게요 <i data-icon="arrow-right"></i></button>
+            <p class="signup-footnote">검증 참여 신청이며, 실제 메이트 연결이나 탑승 예약은 이루어지지 않아요.</p>
+          </fieldset>
+          <p id="signup-status" class="signup-status" role="status" aria-live="polite" tabindex="-1"></p>
+          <div id="signup-success" class="signup-success" hidden tabindex="-1"><span class="signup-success-mark"><i data-icon="check"></i></span><h3 id="signup-success-title"></h3><p id="signup-success-description"></p><a class="text-link" href="#mates">다른 순간도 둘러보기 <i data-icon="arrow-right"></i></a></div>
+        </form>
+      </section>
+      <div class="small-promise"><i data-icon="spark"></i><p>하루 종일 함께하지 않아도 괜찮아요. <b>Moment와 moment를 모으고 모아, MOMO.</b></p></div>
+    </section>
+
+    <section id="page-mates" class="page" hidden>
+      <div class="page-heading"><div><p class="section-kicker">FIND YOUR MOMENT</p><h1>어떤 순간을 함께할까요?</h1><p>같은 공연, 같은 목적. 딱 맞는 만큼만 함께해요.</p></div><button class="button dark" id="open-create"><i data-icon="plus"></i> 메이트 모집하기</button></div>
+      <button class="event-context" id="mates-event"><span class="live-dot"></span><b id="mates-event-label"></b><span>공연 변경</span><i data-icon="chevron-down"></i></button>
+      <div class="mates-layout"><aside class="filter-panel"><div class="filter-heading"><h2>내게 맞는 조건</h2><button class="text-button" id="reset-filters">초기화</button></div><label for="filter-date">공연 날짜</label><select id="filter-date"></select><label for="filter-time">함께할 시간</label><select id="filter-time"><option value="all">전체 시간</option><option value="before">공연 전</option><option value="after">공연 후</option></select><label for="filter-destination">이동 방향</label><select id="filter-destination"></select><label for="filter-age">연령대</label><select id="filter-age"><option value="all">모든 연령대</option><option value="20">20대</option><option value="30">30대</option></select><div class="filter-note"><i data-icon="info"></i><p>동행은 서로의 페이스를 존중하는 것부터 시작해요.</p></div></aside><div class="mates-results"><div class="purpose-tabs" id="mate-purposes" aria-label="동행 목적"></div><div class="ride-filters" id="mate-ride-filters" hidden aria-label="귀가 방식"></div><div class="results-toolbar"><span id="result-count" role="status"></span><label class="sort-label">정렬 <select id="sort-mates"><option value="recommended">추천순</option><option value="latest">최근 등록순</option></select></label></div><div class="mate-grid" id="all-mates"></div></div></div>
+    </section>
+
+    <section id="page-journey" class="page" hidden>
+      <div class="page-heading"><div><p class="section-kicker">THE WAY BACK</p><h1>좋은 하루의 마지막까지.</h1><p>내게 맞는 귀가 방법을 고르고, 같은 방향의 메이트를 만나요.</p></div><span class="page-stamp"><i data-icon="route"></i> TAKE THE GOOD WAY HOME</span></div>
+      <div class="journey-search"><button class="journey-event" id="journey-event"><span class="field-label">출발하는 공연</span><b id="journey-event-label"></b><span id="journey-venue"></span></button><span class="journey-arrow"><i data-icon="arrow-right"></i></span><div class="journey-destination"><label for="journey-destination">돌아갈 동네</label><select class="k-select" id="journey-destination"></select></div><button class="button primary" id="search-journey">귀가 방법 찾기 <i data-icon="arrow-right"></i></button></div>
+      <div class="journey-timing"><i data-icon="clock"></i><span>공연 종료 <b>22:10</b> · 퇴장 여유 <b>35분</b>을 기준으로 비교해요.</span><span class="sample-pill">시간·요금은 예시</span></div>
+      <div class="journey-content"><section class="route-section"><div class="section-heading"><h2 id="route-heading"></h2><span class="muted small">인원에 따라 달라지는 선택</span></div><div id="route-cards"></div><div class="transport-notice"><i data-icon="info"></i><p>실제 시간표·실시간 교통·막차 여부를 조회하는 서비스가 아닙니다. 실제 이용 전 운행사 및 교통 앱에서 반드시 확인해 주세요.</p></div></section><aside class="direction-panel"><p class="section-kicker">SAME WAY, GOOD COMPANY</p><h2>가는 방향이 같다면.</h2><p id="direction-description"></p><div id="direction-mates"></div><button id="direction-find" class="button outline">같은 방향 메이트 더 보기 <i data-icon="arrow-right"></i></button><div class="meeting-note"><i data-icon="map-pin"></i><span>첫 만남은 밝고 사람이 많은 곳에서.<br>약속 장소를 구체적으로 정해요.</span></div></aside></div>
+    </section>
+
+    <section id="page-saved" class="page" hidden><div class="page-heading"><div><p class="section-kicker">KEEP THE GOOD ONES</p><h1>나의 보관함</h1><p>마음에 둔 동행과 돌아갈 길, 한곳에 모아두세요.</p></div></div><div class="saved-tabs" id="saved-tabs"><button class="active" data-saved-tab="mates">저장한 메이트</button><button data-saved-tab="requests">연결 요청</button><button data-saved-tab="routes">귀가 플랜</button><button data-saved-tab="posts">내 모집글</button></div><div id="saved-content"></div></section>
+  </main>
+  <footer><div class="footer-top"><a href="#home" class="brand">MOMO<span class="brand-dot">.</span></a><span>순간과 순간을 모아, MOMO.</span><button class="text-button" id="about-button">프로토타입 안내 <i data-icon="arrow-up-right"></i></button></div><div class="footer-bottom"><span>© 2026 MOMO. Moment by moment, together.</span><span>모집·교통 정보는 체험용 예시이며, 참여 신청 정보만 제출됩니다.</span></div></footer>
+  <div id="toast" class="toast k-status" role="status" hidden><i data-icon="check"></i><span></span></div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close icon-button" id="close-dialog" aria-label="창 닫기"><i data-icon="x"></i></button><div id="dialog-content"></div></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
