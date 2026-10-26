@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620" fill="none">
+  <defs>
+    <linearGradient id="night" x1="275" y1="20" x2="1067" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14251F"/>
+      <stop offset=".45" stop-color="#1B3026"/>
+      <stop offset="1" stop-color="#101B17"/>
+    </linearGradient>
+    <linearGradient id="leftShade" x1="0" y1="300" x2="990" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14251F"/>
+      <stop offset=".49" stop-color="#14251F" stop-opacity=".87"/>
+      <stop offset="1" stop-color="#14251F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD8A0" stop-opacity=".46"/>
+      <stop offset=".3" stop-color="#F5BA71" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#EC9E58" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="warmBeam" x1="0" y1="0" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9F52" stop-opacity=".52"/>
+      <stop offset=".4" stop-color="#F17D43" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#F17D43" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="994" y1="217" x2="994" y2="421" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F19B63"/>
+      <stop offset=".38" stop-color="#E96B43"/>
+      <stop offset="1" stop-color="#8E422F"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="1031" y1="405" x2="1031" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E88C50" stop-opacity=".21"/>
+      <stop offset="1" stop-color="#E88C50" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="haze">
+      <stop stop-color="#E98B4E" stop-opacity=".38"/>
+      <stop offset=".5" stop-color="#BC7043" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#BC7043" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bloom">
+      <stop stop-color="#FFF0BE"/>
+      <stop offset=".09" stop-color="#FFE1A4" stop-opacity=".9"/>
+      <stop offset=".28" stop-color="#F4A35E" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#F4A35E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx=".64" cy=".52" r=".73">
+      <stop offset=".38" stop-color="#09150F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#09150F" stop-opacity=".73"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="defocus"><feGaussianBlur stdDeviation="3.2"/></filter>
+    <filter id="smallDefocus"><feGaussianBlur stdDeviation="1.1"/></filter>
+    <filter id="atmosphere"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="wideSoft"><feGaussianBlur stdDeviation="38"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <pattern id="ledLines" width="5" height="5" patternUnits="userSpaceOnUse">
+      <path d="M0 4H5" stroke="#282B21" stroke-opacity=".2"/>
+    </pattern>
+    <g id="lamp">
+      <rect x="-7" y="-9" width="14" height="17" rx="3" fill="#18221B"/>
+      <ellipse cy="8" rx="6" ry="3" fill="#FBC189"/>
+    </g>
+    <g id="person">
+      <ellipse cx="0" cy="0" rx="9" ry="11"/>
+      <path d="M-20 53-16 19C-15 8 14 8 16 19L22 53Z"/>
+    </g>
+  </defs>
+
+  <path fill="url(#night)" d="M0 0H1500V620H0z"/>
+  <ellipse cx="1067" cy="319" rx="474" ry="309" fill="url(#haze)"/>
+  <ellipse cx="1045" cy="403" rx="248" ry="55" fill="#D19053" opacity=".13" filter="url(#wideSoft)"/>
+
+  <path d="m582 15 889 148m-804-65 815 126" stroke="#425044" stroke-opacity=".08" stroke-width="2" filter="url(#smallDefocus)"/>
+  <ellipse cx="1115" cy="358" rx="296" ry="133" fill="#D79354" opacity=".1" filter="url(#wideSoft)"/>
+
+  <!-- Soft overlapping shafts of light, with their origins on the truss. -->
+  <g opacity=".8" filter="url(#soft)">
+    <path d="M0 0-139 467H137Z" transform="translate(812 186) rotate(-26)" fill="url(#warmBeam)"/>
+    <path d="M0 0-109 470H111Z" transform="translate(906 186) rotate(20)" fill="url(#beam)"/>
+    <path d="M0 0-132 470H133Z" transform="translate(1001 186) rotate(-19)" fill="url(#warmBeam)"/>
+    <path d="M0 0-92 463H116Z" transform="translate(1095 186) rotate(23)" fill="url(#beam)"/>
+    <path d="M0 0-122 467H119Z" transform="translate(1190 186) rotate(-24)" fill="url(#warmBeam)"/>
+    <path d="M0 0-93 462H92Z" transform="translate(1285 186) rotate(16)" fill="url(#beam)"/>
+  </g>
+  <g opacity=".4" filter="url(#soft)">
+    <path d="m910 186-275 346 220 44Z" fill="#F5C38B" fill-opacity=".12"/>
+    <path d="m1192 186 272 355-194 14Z" fill="#F38C51" fill-opacity=".13"/>
+  </g>
+
+  <!-- Distant light panels dissolve into the stage smoke. -->
+  <g filter="url(#defocus)" opacity=".62">
+    <path d="m843 283 35-7 3 141-37 1Z" fill="#C17F4C" opacity=".25"/>
+    <path d="m912 264 17-2 3 154h-18Z" fill="#F2B875" opacity=".7"/>
+    <path d="m945 260 26-2 3 159h-27Z" fill="#D98E54" opacity=".24"/>
+    <path d="m993 253 12-2 3 166h-14Z" fill="#FFC58D" opacity=".5"/>
+    <path d="m1030 249 33-3 2 172h-35Z" fill="#E3975E" opacity=".22"/>
+    <path d="m1083 242 12-2 3 177h-13Z" fill="#FFE0A8" opacity=".64"/>
+    <path d="m1121 238 24-2 3 181h-25Z" fill="#D88D51" opacity=".31"/>
+    <path d="m1172 231 14-2 3 188h-14Z" fill="#F6BC81" opacity=".64"/>
+    <path d="m1217 226 25-2 3 193h-27Z" fill="#D88D51" opacity=".29"/>
+    <path d="m1262 221 14-2 3 198h-14Z" fill="#F6BC81" opacity=".45"/>
+    <path d="m1311 216 24-2 3 203h-26Z" fill="#C97845" opacity=".25"/>
+  </g>
+  <g filter="url(#atmosphere)">
+    <path d="m907 347 388-41 18 109-405 12Z" fill="#E99B61" opacity=".25"/>
+    <ellipse cx="1110" cy="408" rx="259" ry="19" fill="#EDAD70" opacity=".26"/>
+    <ellipse cx="1170" cy="367" rx="126" ry="52" fill="#FBC78E" opacity=".14"/>
+    <path d="m997 236-170 309h77l115-309Z" fill="#FFDEA5" opacity=".1"/>
+  </g>
+  <g filter="url(#smallDefocus)" opacity=".2" fill="#0F2019">
+    <ellipse cx="1045" cy="394" rx="5" ry="15"/>
+    <ellipse cx="1152" cy="391" rx="4.5" ry="17"/>
+    <ellipse cx="1241" cy="393" rx="5" ry="16"/>
+  </g>
+  <path d="M885 421 1370 414" stroke="#F2B87B" stroke-opacity=".14" stroke-width="2" filter="url(#defocus)"/>
+  <path d="M847 444 729 620h668l-135-176Z" fill="url(#floor)" opacity=".45"/>
+
+  <!-- Small pools around the lamps create restrained optical bloom. -->
+  <g>
+    <ellipse cx="812" cy="190" rx="41" ry="33" fill="url(#bloom)"/>
+    <ellipse cx="906" cy="190" rx="48" ry="35" fill="url(#bloom)"/>
+    <ellipse cx="1001" cy="190" rx="43" ry="34" fill="url(#bloom)"/>
+    <ellipse cx="1095" cy="190" rx="48" ry="36" fill="url(#bloom)"/>
+    <ellipse cx="1190" cy="190" rx="43" ry="34" fill="url(#bloom)"/>
+    <ellipse cx="1285" cy="190" rx="46" ry="35" fill="url(#bloom)"/>
+  </g>
+  <g filter="url(#soft)">
+    <path d="m1287 190-239 307 93 18Z" fill="#F8C387" opacity=".12"/>
+    <path d="m903 190 247 317 50-12Z" fill="#F9D39C" opacity=".15"/>
+    <path d="m1095 189-370 352 86 17Z" fill="#F6C186" opacity=".07"/>
+  </g>
+  <ellipse cx="1159" cy="449" rx="282" ry="48" fill="#D58E56" opacity=".12" filter="url(#wideSoft)"/>
+
+  <!-- The crowd is several layers of uneven silhouettes, never a repeating fence. -->
+  <path d="M390 520c87-10 136-38 219-32 56 4 74-20 126-17 58 4 69-16 119-14 63 2 88 18 145 8 50-9 89-4 134 0 73 7 114-8 185-6 67 1 112 25 182 20v141H390Z" fill="#17231B" filter="url(#defocus)"/>
+  <g fill="#142018" filter="url(#smallDefocus)">
+    <use href="#person" transform="translate(609 492) scale(.74)"/>
+    <use href="#person" transform="translate(645 482) scale(.69)"/>
+    <use href="#person" transform="translate(681 484) scale(.82)"/>
+    <use href="#person" transform="translate(715 475) scale(.76)"/>
+    <use href="#person" transform="translate(745 480) scale(.8)"/>
+    <use href="#person" transform="translate(786 471) scale(.7)"/>
+    <use href="#person" transform="translate(824 473) scale(.76)"/>
+    <use href="#person" transform="translate(859 479) scale(.85)"/>
+    <use href="#person" transform="translate(897 476) scale(.76)"/>
+    <use href="#person" transform="translate(930 468) scale(.8)"/>
+    <use href="#person" transform="translate(970 478) scale(.88)"/>
+    <use href="#person" transform="translate(1005 474) scale(.72)"/>
+    <use href="#person" transform="translate(1045 472) scale(.81)"/>
+    <use href="#person" transform="translate(1084 478) scale(.79)"/>
+    <use href="#person" transform="translate(1120 470) scale(.82)"/>
+    <use href="#person" transform="translate(1155 476) scale(.77)"/>
+    <use href="#person" transform="translate(1196 471) scale(.83)"/>
+    <use href="#person" transform="translate(1236 480) scale(.75)"/>
+    <use href="#person" transform="translate(1275 475) scale(.88)"/>
+    <use href="#person" transform="translate(1314 478) scale(.79)"/>
+    <use href="#person" transform="translate(1356 485) scale(.86)"/>
+    <use href="#person" transform="translate(1400 489) scale(.9)"/>
+    <use href="#person" transform="translate(1445 486) scale(.84)"/>
+    <use href="#person" transform="translate(1480 498) scale(.9)"/>
+  </g>
+  <path d="M533 620v-64c0-17 16-30 33-27l9 2 5-19 6-2 2 6-3 34 18 70Zm288 0 12-85 9-8 14-49 7 2-8 53 6 11 12 76Zm366 0 16-83 17-29 13-39 6 1-8 45-9 28 5 77Zm141 0 6-69-14-38-20-30 5-4 26 29 19 34 13 78Z" fill="#0F1A14" filter="url(#defocus)"/>
+  <g fill="#101B14" filter="url(#defocus)">
+    <use href="#person" transform="translate(503 550) scale(1.6)"/>
+    <use href="#person" transform="translate(581 534) scale(1.42)"/>
+    <use href="#person" transform="translate(651 542) scale(1.6)"/>
+    <use href="#person" transform="translate(723 526) scale(1.47)"/>
+    <use href="#person" transform="translate(792 546) scale(1.66)"/>
+    <use href="#person" transform="translate(860 531) scale(1.56)"/>
+    <use href="#person" transform="translate(936 545) scale(1.72)"/>
+    <use href="#person" transform="translate(1012 529) scale(1.53)"/>
+    <use href="#person" transform="translate(1087 540) scale(1.7)"/>
+    <use href="#person" transform="translate(1163 526) scale(1.54)"/>
+    <use href="#person" transform="translate(1234 545) scale(1.72)"/>
+    <use href="#person" transform="translate(1313 532) scale(1.61)"/>
+    <use href="#person" transform="translate(1385 546) scale(1.74)"/>
+    <use href="#person" transform="translate(1460 532) scale(1.58)"/>
+  </g>
+  <g fill="#F8CA93" opacity=".55" filter="url(#smallDefocus)">
+    <circle cx="674" cy="500" r="2"/><circle cx="759" cy="480" r="1.6"/>
+    <circle cx="880" cy="507" r="1.9"/><circle cx="1027" cy="479" r="1.5"/>
+    <circle cx="1139" cy="495" r="1.8"/><circle cx="1277" cy="512" r="2"/>
+    <circle cx="1405" cy="505" r="1.5"/>
+    <path d="M846 472h5v9h-5zm357-8h5v10h-5zm102 22h5v8h-5z"/>
+  </g>
+
+  <path fill="url(#leftShade)" d="M0 0H1500V620H0z"/>
+  <path fill="url(#vignette)" d="M0 0H1500V620H0z"/>
+  <path fill="#B5A184" opacity=".12" filter="url(#grain)" d="M0 0H1500V620H0z"/>
+</svg>
